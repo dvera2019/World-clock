@@ -17,6 +17,14 @@ function updateTime() {
   madridTimeElement.innerHTML = madridTimeZone.format(
     "hh:mm:ss [<small>]A[</small>]"
   );
+  let stockholmElement = document.querySelector("#stockholm");
+  let stockholmDateElement = stockholmElement.querySelector(".date");
+  let stockholmTimeElement = stockholmElement.querySelector(".time");
+  let stockholmTimeZone = moment().tz("Europe/Stockholm");
+  stockholmDateElement.innerHTML = moment().format("MMMM Do, YY");
+  stockholmTimeElement.innerHTML = stockholmTimeZone.format(
+    "hh:mm:ss [<small>]A[</small>]"
+  );
 }
 updateTime();
 setInterval(updateTime, 1000);
